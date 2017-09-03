@@ -1,0 +1,3 @@
+#!/bin/sh
+python /home/pi/snowboy/snowboy.py >/dev/null </dev/null 2>/dev/null &
+echo "Rozpoczęto nasłuchiwanie ze słowem kluczem: słuchaj"
