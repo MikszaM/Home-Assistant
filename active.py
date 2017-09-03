@@ -9,7 +9,7 @@ import requests
 import json
 import os
 
-API_KEY = 'SZPMFOGCTUKICPR2ILG4S37RXENTTGRK'
+API_KEY = 'Your wit.ai Client Access Token'
 
 hd = {'Authorization': 'Bearer %s' % API_KEY,
            'accept': 'application/json',
