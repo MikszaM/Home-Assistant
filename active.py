@@ -8,8 +8,11 @@ import pyaudio
 import requests
 import json
 import os
+import modules
+from commands import Any
+any=Any()
 
-API_KEY = 'Your wit.ai Client Access Token'
+API_KEY = 'SZPMFOGCTUKICPR2ILG4S37RXENTTGRK'
 
 hd = {'Authorization': 'Bearer %s' % API_KEY,
            'accept': 'application/json',
@@ -33,6 +36,7 @@ def transcribe(f):
     except requests.exceptions.HTTPError:
         print('Request failed with response: %r',
                               r.text)
+        any.dong()
         return []
     except requests.exceptions.RequestException:
         print('Request failed.')
@@ -49,6 +53,7 @@ def transcribe(f):
         if text:
             transcribed.append(text.upper())
         print('Transcribed: %r', transcribed)
+        modules.search(transcribed)                
     return transcribed
         
 def fetchThreshold():
