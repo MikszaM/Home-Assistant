@@ -12,7 +12,7 @@ import modules
 from commands import Any
 any=Any()
 
-API_KEY = 'SZPMFOGCTUKICPR2ILG4S37RXENTTGRK'
+API_KEY = 'Your API Key'
 
 hd = {'Authorization': 'Bearer %s' % API_KEY,
            'accept': 'application/json',
