@@ -1,4 +1,4 @@
-sudo cp -rf /home/pi/display/usr/share/X11/xorg.conf.d/99-fbturbo.conf-HDMI  /usr/share/X11/xorg.conf.d/99-fbturbo.conf
-sudo cp /home/pi/display/boot/config-nomal.txt /boot/config.txt
-#sudo cp /home/pi/display/cmdline.txt /boot/
+sudo cp -rf /home/pi/Home-Assistant/display/usr/share/X11/xorg.conf.d/99-fbturbo.conf-HDMI  /usr/share/X11/xorg.conf.d/99-fbturbo.conf
+sudo cp /home/pi/Home-Assistant/display/boot/config-nomal.txt /boot/config.txt
+#sudo cp /home/pi/Home-Assistant/display/cmdline.txt /boot/
 echo "reboot to change"

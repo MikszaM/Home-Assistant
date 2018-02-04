@@ -1,5 +1,5 @@
 i=1
-for lines in `cat /home/pi/display/boot/mark`
+for lines in `cat /home/pi/Home-Assistant/display/boot/mark`
 do
   case ${i} in
   1) var1=${lines};;
@@ -12,34 +12,34 @@ if test "$var1" = "0";then
 #sudo mkdir /etc/X11/xorg.conf.d
 sudo apt-get install xserver-xorg-input-evdev
 sudo cp -rf /usr/share/X11/xorg.conf.d/10-evdev.conf /usr/share/X11/xorg.conf.d/45-evdev.conf
-echo "1" > /home/pi/display/boot/mark
+echo "1" > /home/pi/Home-Assistant/display/boot/mark
 fi
 
 if test "$1" = "0" -o "$#" = "0";then
-sudo cp -rf /home/pi/display/etc/X11/xorg.conf.d/99-calibration.conf-35  /usr/share/X11/xorg.conf.d/99-calibration.conf
-sudo cp /home/pi/display/boot/config-35.txt /boot/config.txt
+sudo cp -rf /home/pi/Home-Assistant/display/etc/X11/xorg.conf.d/99-calibration.conf-35  /usr/share/X11/xorg.conf.d/99-calibration.conf
+sudo cp /home/pi/Home-Assistant/display/boot/config-35.txt /boot/config.txt
 echo "LCD configrue 0"
 elif test "$1" = "90";then
-sudo cp -rf /home/pi/display/etc/X11/xorg.conf.d/99-calibration.conf-35-90  /usr/share/X11/xorg.conf.d/99-calibration.conf
-sudo cp /home/pi/display/boot/config-35.txt-90 /boot/config.txt
+sudo cp -rf /home/pi/Home-Assistant/display/etc/X11/xorg.conf.d/99-calibration.conf-35-90  /usr/share/X11/xorg.conf.d/99-calibration.conf
+sudo cp /home/pi/Home-Assistant/display/boot/config-35.txt-90 /boot/config.txt
 echo "LCD configrue 90"
 elif test "$1" = "180";then
-sudo cp -rf /home/pi/display/etc/X11/xorg.conf.d/99-calibration.conf-35-180  /usr/share/X11/xorg.conf.d/99-calibration.conf
-sudo cp /home/pi/display/boot/config-35.txt-180 /boot/config.txt
+sudo cp -rf /home/pi/Home-Assistant/display/etc/X11/xorg.conf.d/99-calibration.conf-35-180  /usr/share/X11/xorg.conf.d/99-calibration.conf
+sudo cp /home/pi/Home-Assistant/display/boot/config-35.txt-180 /boot/config.txt
 echo "LCD configrue 180"
 elif test "$1" = "270"; then
-sudo cp -rf /home/pi/display/etc/X11/xorg.conf.d/99-calibration.conf-35-270  /usr/share/X11/xorg.conf.d/99-calibration.conf
-sudo cp /home/pi/display/boot/config-35.txt-270 /boot/config.txt
+sudo cp -rf /home/pi/Home-Assistant/display/etc/X11/xorg.conf.d/99-calibration.conf-35-270  /usr/share/X11/xorg.conf.d/99-calibration.conf
+sudo cp /home/pi/Home-Assistant/display/boot/config-35.txt-270 /boot/config.txt
 echo "LCD configrue 270"
 fi
 
-sudo cp /home/pi/display/waveshare35a-overlay.dtb /boot/overlays/waveshare35a.dtbo
-sudo cp /home/pi/display/waveshare35a-overlay.dtb /boot/overlays/
-sudo cp -rf /home/pi/display/usr/share/X11/xorg.conf.d/99-fbturbo.conf  /usr/share/X11/xorg.conf.d/
+sudo cp /home/pi/Home-Assistant/display/waveshare35a-overlay.dtb /boot/overlays/waveshare35a.dtbo
+sudo cp /home/pi/Home-Assistant/display/waveshare35a-overlay.dtb /boot/overlays/
+sudo cp -rf /home/pi/Home-Assistant/display/usr/share/X11/xorg.conf.d/99-fbturbo.conf  /usr/share/X11/xorg.conf.d/
 if [ -b /dev/mmcblk0p7 ]; then
-sudo cp /home/pi/display/cmdline.txt-noobs /boot/cmdline.txt
+sudo cp /home/pi/Home-Assistant/display/cmdline.txt-noobs /boot/cmdline.txt
 else
-sudo cp /home/pi/display/cmdline.txt /boot/
+sudo cp /home/pi/Home-Assistant/display/cmdline.txt /boot/
 fi
 
 if test "$#" = "0" -o "$1" = "0" -o "$1" = "90"  -o "$1" = "180" -o "$1" = "270"; then
